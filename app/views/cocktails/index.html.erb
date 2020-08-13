@@ -1,11 +1,21 @@
-<h1>Cocktails</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://blog.ubaldi.com/wp-content/uploads/2019/05/cocktails-blender.jpg);">
+  <div class="container">
+    <h1><span id="banner-typed-text"></span></h1>
+    <p>My Cocktails is a catalog of +1000 cocktails</p>
+    <%= link_to "Add cocktail", new_cocktail_path, :class => "btn btn-gradient"%>
+  </div>
+</div>
 
-<ul>
+<h1 class="ml-4 mb-2 mt-3 text-center text-secondary font-weight-bold">My Cocktails</h1>
+
+<div class="cards">
   <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name,  cocktail_path(cocktail) %></li>
+    <div class="mx-3 mt-3 card-category rounded background-cover d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/500x300/?cocktail')">
+      <%= link_to cocktail.name.capitalize,  cocktail_path(cocktail), :class => "text-white font-weight-bold card-text" %>
+    </div>
   <% end %>
-</ul>
+</div>
 
-<h2><%= link_to "Add cocktail", new_cocktail_path %> </h2>
+
 
 
