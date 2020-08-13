@@ -1,9 +1,10 @@
-<h1>Create a new dose</h1>
+<br>
+<h1 class="mt-5">Create a new dose</h1>
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
   <%= f.association :ingredient %>
-  <%= f.submit %>
+  <%= f.submit "Add", :class => "btn btn-success" %>
+  <%= link_to "Back", cocktail_path(@cocktail), :class => "btn btn-primary" %>
 <% end %>
 
-<%= link_to "Back", cocktail_path(@cocktail) %>
