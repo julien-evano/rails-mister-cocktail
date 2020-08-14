@@ -26,3 +26,4 @@ user["drinks"].each do |ingredient|
 end
 
 puts "Finished!"
+
