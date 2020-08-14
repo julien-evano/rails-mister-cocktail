@@ -2,7 +2,13 @@
 <br>
 
 <h1 class="mt-5"><%= @cocktail.name.capitalize %></h1>
-<%= image_tag "https://source.unsplash.com/500x300/?cocktail #{ @cocktail.name }", alt: "cocktail", width: 400, :class => "cocktail-img" %>
+
+<% if @cocktail.photo.attached? %>
+  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill, :class => "cocktail-img" %>
+<% else %>
+  <%= image_tag "https://source.unsplash.com/500x300/?cocktail #{ @cocktail.name }", alt: "cocktail", width: 400, :class => "cocktail-img" %>
+<% end %>
+
 
 <h2 class="mt-2">Ingredients</h2>
 <ul>
